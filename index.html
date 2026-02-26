@@ -321,6 +321,50 @@ a{text-decoration:none;color:inherit}
 @media (max-width: 520px){
   .nav-cta{ display:none; }
 }
+/* Mobile sticky CTA (minimal + high-trust) */
+.mobile-sticky-cta{
+  display:none;
+}
+
+@media (max-width: 640px){
+  /* Add space so the sticky bar doesn't cover content */
+  body{
+    padding-bottom: 84px;
+  }
+
+  .mobile-sticky-cta{
+    display:flex;
+    position:fixed;
+    left: 16px;
+    right: 16px;
+    bottom: 14px;
+    z-index: 999;
+
+    align-items:center;
+    justify-content:center;
+    gap: 10px;
+
+    height: 54px;
+    border-radius: 14px;
+
+    background: var(--navy);
+    color: var(--white);
+
+    border: 1px solid rgba(255,255,255,0.10);
+    box-shadow: 0 18px 50px rgba(15,25,35,0.25);
+
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.86rem;
+    letter-spacing: 0.01em;
+
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .mobile-sticky-cta:active{
+    transform: translateY(1px);
+  }
+}
 </style>
 </head>
 <body>
@@ -754,5 +798,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   });
 });
 </script>
+<!-- Mobile Sticky CTA -->
+<a class="mobile-sticky-cta" href=https://calendly.com/YOURNAME/YOUR-EVENT"" aria-label="Get a Free Site Audit">
+  Get a Free Site Audit
+  <span aria-hidden="true">→</span>
+</a>
 </body>
 </html>
