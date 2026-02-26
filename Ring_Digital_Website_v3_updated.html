@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ring Digital — Websites That Drive Phone Calls</title>
+<meta name="description" content="Ring Digital builds conversion-structured websites for local service businesses. Clean, modern sites designed to drive phone calls. Serving Houston and nationwide.">
+<meta name="theme-color" content="#0f1923">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=General+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --navy:#0f1923;
+  --navy-mid:#162032;
+  --navy-light:#1c2d45;
+  --slate:#3d5a80;
+  --slate-light:#5b7ea6;
+  --charcoal:#1a1d22;
+  --stone:#7d8a9a;
+  --stone-light:#a8b4c2;
+  --cream:#f4f6f9;
+  --cream-warm:#f8f9fb;
+  --white:#ffffff;
+  --accent:#3b82c4;
+  --accent-soft:rgba(59,130,196,0.08);
+  --gold:#c9a84c;
+  --gold-soft:rgba(201,168,76,0.1);
+  --border:rgba(15,25,35,0.06);
+  --border-med:rgba(15,25,35,0.1);
+  --shadow-sm:0 1px 3px rgba(15,25,35,0.04);
+  --shadow-md:0 4px 16px rgba(15,25,35,0.06);
+  --shadow-lg:0 12px 40px rgba(15,25,35,0.08);
+  --shadow-xl:0 24px 64px rgba(15,25,35,0.12);
+  --font-display:'DM Serif Display',Georgia,serif;
+  --font-body:'General Sans',-apple-system,system-ui,sans-serif;
+  --ease:cubic-bezier(0.25,0.46,0.45,0.94);
+  --ease-out:cubic-bezier(0.16,1,0.3,1);
+}
+
+html{scroll-behavior:smooth;font-size:16px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{font-family:var(--font-body);color:var(--charcoal);background:var(--white);line-height:1.7;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+
+/* ── Animations ── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.8s var(--ease-out),transform 0.8s var(--ease-out)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:0.12s}.reveal-d2{transition-delay:0.24s}.reveal-d3{transition-delay:0.36s}.reveal-d4{transition-delay:0.48s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes subtlePulse{0%,100%{opacity:1}50%{opacity:0.7}}
+
+/* ── Navigation ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:all 0.4s}
+.nav.scrolled{box-shadow:0 1px 24px rgba(15,25,35,0.06)}
+.nav-inner{max-width:1140px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:72px}
+.nav-logo{display:flex;align-items:center;gap:0.5rem}
+.nav-logo-img{height:52px;width:auto}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a.nav-link{font-family:var(--font-body);font-weight:500;font-size:0.82rem;color:var(--stone);transition:color 0.3s;letter-spacing:0.02em}
+.nav-links a.nav-link:hover{color:var(--navy)}
+.nav-right{display:flex;align-items:center;gap:1.25rem}
+.nav-phone{font-family:var(--font-body);font-weight:600;font-size:0.85rem;color:var(--navy);letter-spacing:0.01em;display:flex;align-items:center;gap:0.4rem;transition:color 0.3s}
+.nav-phone:hover{color:var(--accent)}
+.nav-phone svg{width:14px;height:14px;flex-shrink:0}
+.nav-cta{font-family:var(--font-body);font-weight:600;font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;padding:0.7rem 1.5rem;background:var(--navy);color:var(--white);border-radius:6px;transition:all 0.3s;border:2px solid var(--navy)}
+.nav-cta:hover{background:var(--navy-mid);border-color:var(--navy-mid);transform:translateY(-1px);box-shadow:var(--shadow-md)}
+
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:0.5rem;flex-direction:column;gap:5px}
+.nav-toggle span{display:block;width:22px;height:2px;background:var(--navy);transition:all 0.3s}
+
+@media(max-width:860px){
+  .nav-links{display:none}
+  .nav-toggle{display:flex}
+}
+@media(max-width:640px){
+  .nav-phone{display:none}
+}
+
+/* ── Hero ── */
+.hero{padding:10rem 2rem 6rem;background:var(--navy);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 70% 50%,rgba(59,130,196,0.06) 0%,transparent 60%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.06),transparent)}
+.hero-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hero-content{position:relative;z-index:2}
+.hero-label{font-family:var(--font-body);font-weight:600;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.7s var(--ease-out) 0.2s forwards}
+.hero h1{font-family:var(--font-display);font-weight:400;font-size:clamp(2.4rem,4.5vw,3.6rem);line-height:1.18;color:var(--white);opacity:0;animation:fadeUp 0.7s var(--ease-out) 0.35s forwards}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-sub{font-family:var(--font-body);font-weight:300;font-size:clamp(0.95rem,1.5vw,1.08rem);line-height:1.8;color:var(--stone-light);max-width:460px;margin-top:1.5rem;opacity:0;animation:fadeUp 0.7s var(--ease-out) 0.5s forwards}
+.hero-actions{display:flex;align-items:center;gap:1rem;margin-top:2.25rem;flex-wrap:wrap;opacity:0;animation:fadeUp 0.7s var(--ease-out) 0.65s forwards}
+.btn-primary{font-family:var(--font-body);font-weight:600;font-size:0.8rem;letter-spacing:0.05em;text-transform:uppercase;padding:0.95rem 2rem;background:var(--white);color:var(--navy);border-radius:6px;transition:all 0.3s;display:inline-flex;align-items:center;gap:0.5rem;border:2px solid var(--white)}
+.btn-primary:hover{background:transparent;color:var(--white);transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,0,0,0.2)}
+.btn-primary svg{width:13px;height:13px;transition:transform 0.3s}
+.btn-primary:hover svg{transform:translateX(3px)}
+.btn-ghost{font-family:var(--font-body);font-weight:500;font-size:0.82rem;color:var(--stone-light);display:inline-flex;align-items:center;gap:0.4rem;transition:all 0.3s;padding:0.95rem 1.5rem;border:1px solid rgba(255,255,255,0.12);border-radius:6px}
+.btn-ghost:hover{color:var(--white);border-color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.04)}
+
+/* Hero visual */
+.hero-visual{position:relative;z-index:2;opacity:0;animation:fadeUp 0.8s var(--ease-out) 0.5s forwards}
+.browser-frame{background:var(--navy-light);border-radius:12px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.06)}
+.browser-bar{display:flex;align-items:center;gap:6px;padding:12px 16px;background:rgba(0,0,0,0.2);border-bottom:1px solid rgba(255,255,255,0.04)}
+.browser-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.1)}
+.browser-url{margin-left:12px;font-family:var(--font-body);font-size:0.62rem;color:rgba(255,255,255,0.25);letter-spacing:0.02em}
+.browser-content{padding:1.75rem;min-height:280px;background:linear-gradient(160deg,#1c2f4a 0%,#0f1923 100%);display:flex;flex-direction:column;gap:0.85rem}
+.mock-label{font-family:var(--font-body);font-size:0.52rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);opacity:0.8}
+.mock-headline{font-family:var(--font-display);font-size:1.4rem;font-weight:400;color:var(--white);line-height:1.25;max-width:280px}
+.mock-text{width:70%;height:5px;border-radius:3px;background:rgba(255,255,255,0.05)}
+.mock-text.short{width:45%}
+.mock-btn{display:inline-block;padding:0.45rem 1.1rem;background:var(--gold);color:var(--navy);font-family:var(--font-body);font-size:0.58rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;border-radius:4px;width:fit-content;margin-top:0.35rem;cursor:pointer;transition:all 0.3s;text-decoration:none}
+.mock-btn:hover{background:#d4b35a;transform:scale(1.05);box-shadow:0 4px 16px rgba(201,168,76,0.3)}
+.mock-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:0.5rem}
+.mock-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04);border-radius:5px;padding:0.75rem;display:flex;flex-direction:column;gap:4px}
+.mock-card-line{height:4px;border-radius:2px;background:rgba(255,255,255,0.05)}
+.mock-card-line.w60{width:60%}.mock-card-line.w80{width:80%}.mock-card-line.w40{width:40%}
+
+@media(max-width:860px){
+  .hero-inner{grid-template-columns:1fr;text-align:center}
+  .hero-sub{margin-left:auto;margin-right:auto}
+  .hero-actions{justify-content:center}
+  .hero-visual{max-width:460px;margin:0 auto}
+}
+
+/* ── Trust Bar ── */
+.trust-bar{background:var(--cream);border-bottom:1px solid var(--border);padding:1.25rem 2rem}
+.trust-bar-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap}
+.trust-item{font-family:var(--font-body);font-weight:400;font-size:0.82rem;color:var(--stone);display:flex;align-items:center;gap:0.45rem}
+.trust-item svg{width:15px;height:15px;color:var(--slate);flex-shrink:0;opacity:0.6}
+.trust-item strong{font-weight:600;color:var(--navy)}
+
+/* ── Shared Section ── */
+.section{padding:6.5rem 2rem}
+.section-inner{max-width:1140px;margin:0 auto}
+.section-label{font-family:var(--font-body);font-weight:600;font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:0.85rem}
+.section-title{font-family:var(--font-display);font-weight:400;font-size:clamp(1.9rem,3.8vw,2.8rem);line-height:1.2;color:var(--navy);max-width:600px}
+.section-subtitle{font-family:var(--font-body);font-weight:300;font-size:0.98rem;line-height:1.8;color:var(--stone);max-width:500px;margin-top:0.85rem}
+
+/* ── Problem ── */
+.problem{background:var(--cream)}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3rem;align-items:start}
+.problem-stat-block{background:var(--white);border:1px solid var(--border-med);border-radius:10px;padding:1.75rem 2rem;border-left:3px solid var(--accent)}
+.problem-stat-text{font-family:var(--font-body);font-weight:400;font-size:1.15rem;line-height:1.6;color:var(--navy)}
+.stat-highlight{font-weight:700;color:var(--accent)}
+.problem-stat-source{font-family:var(--font-body);font-weight:400;font-size:0.75rem;color:var(--stone);margin-top:0.5rem;letter-spacing:0.01em}
+.problem-text{font-family:var(--font-body);font-weight:400;font-size:0.92rem;line-height:1.85;color:var(--charcoal)}
+.problem-items{display:flex;flex-direction:column;gap:0.75rem}
+.problem-item{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.15rem 1.4rem;display:flex;align-items:flex-start;gap:0.85rem;transition:all 0.3s}
+.problem-item:hover{border-color:var(--border-med);box-shadow:var(--shadow-sm)}
+.problem-item .icon{width:34px;height:34px;background:rgba(220,53,69,0.06);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.problem-item .icon svg{width:14px;height:14px;color:#c0392b}
+.problem-item h4{font-family:var(--font-body);font-weight:600;font-size:0.86rem;color:var(--navy);margin-bottom:0.15rem}
+.problem-item p{font-family:var(--font-body);font-weight:300;font-size:0.82rem;line-height:1.6;color:var(--stone)}
+
+/* ── Approach ── */
+.approach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.approach-card{padding:2.25rem 1.75rem;border:1px solid var(--border);border-radius:10px;transition:all 0.4s;background:var(--white);position:relative;overflow:hidden}
+.approach-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);opacity:0;transition:opacity 0.4s}
+.approach-card:hover{border-color:var(--accent-soft);box-shadow:var(--shadow-md)}
+.approach-card:hover::before{opacity:1}
+.approach-card .num{font-family:var(--font-display);font-weight:400;font-size:2rem;color:var(--accent);opacity:0.3;line-height:1;margin-bottom:1rem}
+.approach-card h3{font-family:var(--font-display);font-weight:400;font-size:1.3rem;color:var(--navy);margin-bottom:0.6rem;line-height:1.3}
+.approach-card p{font-family:var(--font-body);font-weight:300;font-size:0.88rem;line-height:1.75;color:var(--stone)}
+
+/* ── Portfolio ── */
+.portfolio{background:var(--navy)}
+.portfolio .section-label{color:var(--gold)}
+.portfolio .section-title{color:var(--white)}
+.portfolio .section-subtitle{color:var(--stone-light)}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;margin-top:3rem}
+.portfolio-card{border-radius:10px;overflow:hidden;background:var(--navy-mid);border:1px solid rgba(255,255,255,0.05);transition:all 0.5s}
+.portfolio-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,0.35)}
+.portfolio-browser{background:rgba(0,0,0,0.2)}
+.portfolio-bar{display:flex;align-items:center;gap:5px;padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.03)}
+.portfolio-bar .dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.08)}
+.portfolio-bar .url{margin-left:8px;font-family:var(--font-body);font-size:0.58rem;color:rgba(255,255,255,0.2);letter-spacing:0.02em}
+
+/* Individual portfolio previews with unique colors */
+.portfolio-preview{padding:1.5rem;min-height:170px;display:flex;flex-direction:column;gap:0.55rem}
+.portfolio-preview .p-label{font-size:0.48rem;letter-spacing:0.15em;text-transform:uppercase;font-family:var(--font-body);font-weight:600}
+.portfolio-preview .p-title{font-family:var(--font-display);font-size:1.05rem;font-weight:400;line-height:1.3}
+.portfolio-preview .p-line{height:4px;border-radius:2px}
+.portfolio-preview .p-btn{display:inline-block;padding:0.32rem 0.8rem;font-family:var(--font-body);font-size:0.5rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;border-radius:4px;width:fit-content;margin-top:0.2rem}
+
+/* Kinetic - energetic orange/dark theme */
+.preview-kinetic{background:linear-gradient(160deg,#1a1a1a 0%,#2d1f0f 100%)}
+.preview-kinetic .p-label{color:#e67e22}
+.preview-kinetic .p-title{color:#fff}
+.preview-kinetic .p-line{background:rgba(230,126,34,0.15)}
+.preview-kinetic .p-line.accent{background:rgba(230,126,34,0.3)}
+.preview-kinetic .p-btn{background:#e67e22;color:#1a1a1a}
+
+/* Truck Parts - industrial blue/steel */
+.preview-truck{background:linear-gradient(160deg,#0c1e2e 0%,#1a3450 100%)}
+.preview-truck .p-label{color:#5dade2}
+.preview-truck .p-title{color:#fff}
+.preview-truck .p-line{background:rgba(93,173,226,0.12)}
+.preview-truck .p-line.accent{background:rgba(93,173,226,0.25)}
+.preview-truck .p-btn{background:#e74c3c;color:#fff}
+
+/* Hive Mine - dark/gold authority */
+.preview-hive{background:linear-gradient(160deg,#0d0d0d 0%,#1a1608 100%)}
+.preview-hive .p-label{color:#c9a84c}
+.preview-hive .p-title{color:#f0e6cc}
+.preview-hive .p-line{background:rgba(201,168,76,0.1)}
+.preview-hive .p-line.accent{background:rgba(201,168,76,0.2)}
+.preview-hive .p-btn{background:#c9a84c;color:#0d0d0d}
+
+.portfolio-info{padding:1.25rem 1.5rem}
+.portfolio-info h3{font-family:var(--font-body);font-weight:600;font-size:0.92rem;color:var(--white);margin-bottom:0.25rem}
+.portfolio-info .portfolio-type{font-family:var(--font-body);font-weight:300;font-size:0.75rem;color:var(--stone-light);margin-bottom:0.55rem}
+.portfolio-info p{font-family:var(--font-body);font-weight:300;font-size:0.8rem;line-height:1.65;color:var(--stone)}
+.portfolio-link{display:inline-flex;align-items:center;gap:0.35rem;font-family:var(--font-body);font-weight:500;font-size:0.76rem;color:var(--accent);margin-top:0.7rem;transition:all 0.3s}
+.portfolio-link:hover{color:var(--white)}
+.portfolio-link svg{width:12px;height:12px;transition:transform 0.3s}
+.portfolio-link:hover svg{transform:translateX(3px)}
+
+/* ── Who We Serve ── */
+.serve{background:var(--cream)}
+.serve-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem}
+.serve-item{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.35rem 1.15rem;text-align:center;transition:all 0.3s}
+.serve-item:hover{border-color:var(--accent-soft);box-shadow:var(--shadow-sm);transform:translateY(-2px)}
+.serve-item h4{font-family:var(--font-body);font-weight:600;font-size:0.86rem;color:var(--navy);margin-bottom:0.15rem}
+.serve-item p{font-family:var(--font-body);font-weight:300;font-size:0.76rem;color:var(--stone)}
+
+/* ── Process ── */
+.process-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:3rem;position:relative}
+.process-steps::before{content:'';position:absolute;top:32px;left:calc(16.66% + 16px);right:calc(16.66% + 16px);height:2px;background:linear-gradient(90deg,var(--accent),var(--gold));opacity:0.2}
+.process-step{text-align:center;padding:0 1.5rem;position:relative}
+.step-num{width:64px;height:64px;border-radius:50%;border:2px solid var(--navy);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-family:var(--font-display);font-weight:400;font-size:1.5rem;color:var(--navy);background:var(--white);position:relative;z-index:2;transition:all 0.3s}
+.process-step:hover .step-num{background:var(--navy);color:var(--white)}
+.process-step h3{font-family:var(--font-display);font-weight:400;font-size:1.2rem;color:var(--navy);margin-bottom:0.5rem}
+.process-step p{font-family:var(--font-body);font-weight:300;font-size:0.86rem;line-height:1.7;color:var(--stone);max-width:260px;margin:0 auto}
+
+/* ── Pricing ── */
+.pricing{background:var(--cream-warm)}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;margin-top:3rem;max-width:860px}
+.pricing-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:2.5rem 2rem;position:relative;transition:all 0.4s}
+.pricing-card:hover{box-shadow:var(--shadow-lg);border-color:transparent}
+.pricing-card.featured{border:2px solid var(--navy);box-shadow:var(--shadow-md)}
+.pricing-card.featured::before{content:'Recommended';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--navy);color:var(--white);font-family:var(--font-body);font-weight:600;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.35rem 1rem;border-radius:20px}
+.pricing-card .plan-name{font-family:var(--font-body);font-weight:600;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--slate);margin-bottom:0.75rem}
+.pricing-card .plan-price{font-family:var(--font-display);font-size:2.8rem;color:var(--navy);line-height:1;margin-bottom:0.25rem}
+.pricing-card .plan-price span{font-family:var(--font-body);font-size:0.85rem;font-weight:300;color:var(--stone)}
+.pricing-card .plan-setup{font-family:var(--font-body);font-weight:400;font-size:0.82rem;color:var(--stone);margin-bottom:1.5rem}
+.pricing-card .plan-desc{font-family:var(--font-body);font-weight:300;font-size:0.88rem;line-height:1.7;color:var(--stone);margin-bottom:1.5rem;min-height:60px}
+.pricing-list{list-style:none;display:flex;flex-direction:column;gap:0.6rem;margin-bottom:2rem}
+.pricing-list li{font-family:var(--font-body);font-weight:400;font-size:0.84rem;color:var(--charcoal);display:flex;align-items:flex-start;gap:0.6rem;line-height:1.5}
+.pricing-list li svg{width:16px;height:16px;color:var(--accent);flex-shrink:0;margin-top:2px}
+.pricing-list li.excluded{color:var(--stone);opacity:0.5}
+.pricing-list li.excluded svg{color:var(--stone)}
+.pricing-cta{display:block;text-align:center;font-family:var(--font-body);font-weight:600;font-size:0.78rem;letter-spacing:0.05em;text-transform:uppercase;padding:0.85rem 1.5rem;border-radius:6px;transition:all 0.3s;border:2px solid var(--navy);color:var(--navy);background:transparent}
+.pricing-cta:hover{background:var(--navy);color:var(--white)}
+.pricing-card.featured .pricing-cta{background:var(--navy);color:var(--white)}
+.pricing-card.featured .pricing-cta:hover{background:var(--navy-mid)}
+.pricing-note{font-family:var(--font-body);font-weight:300;font-size:0.82rem;color:var(--stone);margin-top:1.5rem;text-align:center;max-width:860px}
+.pricing-extra{margin-top:2rem;padding:1.5rem 2rem;background:var(--white);border:1px solid var(--border);border-radius:10px;max-width:860px}
+.pricing-extra h4{font-family:var(--font-body);font-weight:600;font-size:0.88rem;color:var(--navy);margin-bottom:0.5rem}
+.pricing-extra p{font-family:var(--font-body);font-weight:300;font-size:0.84rem;color:var(--stone);line-height:1.7}
+
+/* ── Differentiator ── */
+.diff{background:var(--cream)}
+.diff-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.diff-left blockquote{font-family:var(--font-display);font-style:italic;font-weight:400;font-size:clamp(1.4rem,2.5vw,2rem);line-height:1.35;color:var(--navy);border-left:3px solid var(--gold);padding-left:1.25rem;margin-bottom:1.25rem}
+.diff-left p{font-family:var(--font-body);font-weight:300;font-size:0.92rem;line-height:1.8;color:var(--stone)}
+.diff-right{display:flex;flex-direction:column;gap:0.85rem}
+.diff-item{display:flex;align-items:flex-start;gap:0.85rem;padding:1.1rem;background:var(--white);border-radius:8px;border:1px solid var(--border);transition:all 0.3s}
+.diff-item:hover{box-shadow:var(--shadow-sm)}
+.diff-item .check{width:28px;height:28px;border-radius:8px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.diff-item .check svg{width:13px;height:13px;color:var(--accent)}
+.diff-item h4{font-family:var(--font-body);font-weight:600;font-size:0.86rem;color:var(--navy);margin-bottom:0.15rem}
+.diff-item p{font-family:var(--font-body);font-weight:300;font-size:0.8rem;color:var(--stone);line-height:1.6}
+
+/* ── CTA ── */
+.cta-section{background:var(--navy);padding:6rem 2rem;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;top:-50%;left:-25%;width:150%;height:200%;background:radial-gradient(ellipse at center,rgba(59,130,196,0.06) 0%,transparent 50%);pointer-events:none}
+.cta-inner{max-width:560px;margin:0 auto;position:relative;z-index:2}
+.cta-inner .section-label{color:var(--gold);text-align:center}
+.cta-inner h2{font-family:var(--font-display);font-weight:400;font-size:clamp(1.7rem,3.2vw,2.4rem);line-height:1.2;color:var(--white);margin-bottom:0.85rem}
+.cta-inner>p{font-family:var(--font-body);font-weight:300;font-size:0.95rem;line-height:1.8;color:var(--stone-light);margin-bottom:2rem}
+.cta-inner .btn-primary{font-size:0.82rem;padding:1rem 2.25rem}
+.cta-actions{display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap}
+.cta-contact{margin-top:2rem;display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap}
+.cta-contact a{font-family:var(--font-body);font-weight:400;font-size:0.82rem;color:var(--stone-light);display:flex;align-items:center;gap:0.4rem;transition:color 0.3s}
+.cta-contact a:hover{color:var(--white)}
+.cta-contact a svg{width:14px;height:14px}
+
+/* ── Footer ── */
+.footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.04);padding:3.5rem 2rem 2rem}
+.footer-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem;align-items:start}
+.footer-col h4{font-family:var(--font-body);font-weight:600;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--slate-light);margin-bottom:0.75rem}
+.footer-col p,.footer-col a{font-family:var(--font-body);font-weight:300;font-size:0.8rem;color:var(--stone);line-height:1.85;display:block;transition:color 0.3s}
+.footer-col a:hover{color:var(--white)}
+.footer-bottom{max-width:1140px;margin:2.5rem auto 0;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.04);text-align:center}
+.footer-bottom p{font-family:var(--font-body);font-weight:300;font-size:0.72rem;color:var(--stone);letter-spacing:0.01em}
+
+/* ── Responsive ── */
+@media(max-width:968px){
+  .problem-grid,.diff-layout{grid-template-columns:1fr;gap:2.5rem}
+  .approach-grid,.portfolio-grid{grid-template-columns:1fr}
+  .serve-grid{grid-template-columns:repeat(2,1fr)}
+  .process-steps{grid-template-columns:1fr;gap:2rem}
+  .process-steps::before{display:none}
+  .pricing-grid{grid-template-columns:1fr;max-width:420px}
+  .footer-inner{grid-template-columns:1fr;text-align:center;gap:1.5rem}
+}
+@media(max-width:640px){
+  .nav-inner{padding:0 1.25rem;height:64px}
+  .section{padding:4.5rem 1.25rem}
+  .hero{padding:8rem 1.25rem 4rem}
+  .serve-grid{grid-template-columns:1fr 1fr}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .hero-actions .btn-primary,.hero-actions .btn-ghost{justify-content:center}
+  .cta-actions{flex-direction:column;align-items:stretch}
+  .cta-contact{flex-direction:column;gap:0.75rem}
+  .trust-bar-inner{gap:1rem}
+  .trust-item{font-size:0.76rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ Navigation ═══ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="Ring_Digital_Logo_Transparent.png" alt="Ring Digital" class="nav-logo-img">
+    </a>
+    <div class="nav-links">
+      <a href="#work" class="nav-link">Work</a>
+      <a href="#approach" class="nav-link">Approach</a>
+      <a href="#pricing" class="nav-link">Pricing</a>
+      <a href="#process" class="nav-link">Process</a>
+      <a href="#why" class="nav-link">Why Us</a>
+    </div>
+    <div class="nav-right">
+      <a href="tel:7134241892" class="nav-phone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        (713) 424-1892
+      </a>
+      <a href="#audit" class="nav-cta">Free Site Audit</a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').style.display=document.querySelector('.nav-links').style.display==='flex'?'none':'flex'">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ Hero ═══ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-label">Conversion-focused web development</div>
+      <h1>Websites structured to <em>drive phone calls.</em></h1>
+      <p class="hero-sub">We build clean, professional websites for local service businesses. No gimmicks. No complexity. Just structure that turns visitors into callers.</p>
+      <div class="hero-actions">
+        <a href="#audit" class="btn-primary">
+          Get a Free Site Audit
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="tel:7134241892" class="btn-ghost">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          (713) 424-1892
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="browser-frame">
+        <div class="browser-bar">
+          <div class="browser-dot"></div><div class="browser-dot"></div><div class="browser-dot"></div>
+          <div class="browser-url">yourcompany.com</div>
+        </div>
+        <div class="browser-content">
+          <div class="mock-label">Your Service Business</div>
+          <div class="mock-headline">Professional Service You Can Trust</div>
+          <div class="mock-text"></div>
+          <div class="mock-text short"></div>
+          <a href="tel:7134241892" class="mock-btn">Call Now</a>
+          <div class="mock-grid">
+            <div class="mock-card"><div class="mock-card-line w80"></div><div class="mock-card-line w60"></div></div>
+            <div class="mock-card"><div class="mock-card-line w60"></div><div class="mock-card-line w80"></div></div>
+            <div class="mock-card"><div class="mock-card-line w80"></div><div class="mock-card-line w40"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Trust Bar ═══ -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      Serving <strong>Houston &amp; nationwide</strong>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      Built for <strong>local service businesses</strong>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Every site structured to <strong>drive calls</strong>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+      <strong>Simple, transparent</strong> pricing
+    </div>
+  </div>
+</div>
+
+<!-- ═══ Problem ═══ -->
+<section class="section problem">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">The Problem</div>
+      <h2 class="section-title">Most local business websites quietly lose customers.</h2>
+    </div>
+    <div class="problem-grid">
+      <div class="reveal reveal-d1">
+        <div class="problem-stat-block">
+          <p class="problem-stat-text"><span class="stat-highlight">75% of consumers</span> judge a business's credibility based on its website design alone.</p>
+          <p class="problem-stat-source">— Stanford Web Credibility Research</p>
+        </div>
+        <p class="problem-text" style="margin-top:1.5rem">Most service businesses — HVAC, roofing, plumbing, contractors — have a site that exists without purpose. It doesn't communicate value, establish trust, or guide visitors toward action. Traffic arrives, looks around, and leaves. That silent leak is expensive. And it's fixable.</p>
+      </div>
+      <div class="problem-items reveal reveal-d2">
+        <div class="problem-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div>
+          <div><h4>No clear value proposition</h4><p>Visitors can't tell what you do or why you're different within five seconds.</p></div>
+        </div>
+        <div class="problem-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div>
+          <div><h4>No trust signals</h4><p>No credentials, no social proof, no indicators that you're established and reliable.</p></div>
+        </div>
+        <div class="problem-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></div>
+          <div><h4>No conversion pathway</h4><p>No clear calls-to-action. Visitors don't know what to do next.</p></div>
+        </div>
+        <div class="problem-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div><h4>Too much friction</h4><p>Slow pages, buried contact info, confusing navigation. Every obstacle costs you a call.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Approach ═══ -->
+<section class="section approach" id="approach">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Our Approach</div>
+      <h2 class="section-title">Structure first. Aesthetics second. Results always.</h2>
+      <p class="section-subtitle">Every element on every page earns its place by moving visitors closer to picking up the phone.</p>
+    </div>
+    <div class="approach-grid">
+      <div class="approach-card reveal reveal-d1">
+        <div class="num">01</div>
+        <h3>Conversion Architecture</h3>
+        <p>Every section is built around a single goal: guiding visitors toward action. We structure hierarchy, flow, and placement to eliminate friction and maximize calls.</p>
+      </div>
+      <div class="approach-card reveal reveal-d2">
+        <div class="num">02</div>
+        <h3>Professional Clarity</h3>
+        <p>Clean design that communicates credibility instantly. Your site will look as professional as the largest competitor in your market — without the six-figure budget.</p>
+      </div>
+      <div class="approach-card reveal reveal-d3">
+        <div class="num">03</div>
+        <h3>Disciplined Simplicity</h3>
+        <p>No bloat. No unnecessary pages. No features you'll never use. We build what works and nothing more. Fast, clear, and built to convert.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Portfolio ═══ -->
+<section class="section portfolio" id="work">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Our Work</div>
+      <h2 class="section-title">Recent projects.</h2>
+      <p class="section-subtitle">Every project follows the same principle: clear structure, professional design, and a direct path to the phone.</p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-card reveal reveal-d1">
+        <div class="portfolio-browser">
+          <div class="portfolio-bar">
+            <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            <div class="url">kineticfitnessbz.com</div>
+          </div>
+          <div class="portfolio-preview preview-kinetic">
+            <div class="p-label">Fitness Studio</div>
+            <div class="p-title">Build Fitness and Health for Life</div>
+            <div class="p-line accent" style="width:75%"></div>
+            <div class="p-line" style="width:50%"></div>
+            <div class="p-btn">Message Us</div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <h3>Kinetic Health &amp; Fitness</h3>
+          <div class="portfolio-type">Gym &amp; Personal Training</div>
+          <p>Conversion-structured site with gallery, FAQ, social proof integration, and dual CTAs driving messages and phone calls.</p>
+          <a href="https://kineticfitnessbz.com/" target="_blank" rel="noopener" class="portfolio-link">Visit site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal reveal-d2">
+        <div class="portfolio-browser">
+          <div class="portfolio-bar">
+            <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            <div class="url">truckpartsbelize.com</div>
+          </div>
+          <div class="portfolio-preview preview-truck">
+            <div class="p-label">Auto Parts &amp; Service</div>
+            <div class="p-title">Your Most Trusted Parts Supplier</div>
+            <div class="p-line accent" style="width:70%"></div>
+            <div class="p-line" style="width:45%"></div>
+            <div class="p-btn">Call Now</div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <h3>Truck Parts Supplier</h3>
+          <div class="portfolio-type">Heavy-Duty Parts &amp; Garage</div>
+          <p>Clean, trust-forward site for a 30+ year business. Structured around immediate calls with FAQ, service breakdown, and credibility signals.</p>
+          <a href="https://truckpartsbelize.com/" target="_blank" rel="noopener" class="portfolio-link">Visit site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal reveal-d3">
+        <div class="portfolio-browser">
+          <div class="portfolio-bar">
+            <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            <div class="url">thehivemine.com</div>
+          </div>
+          <div class="portfolio-preview preview-hive">
+            <div class="p-label">Consulting</div>
+            <div class="p-title">Trusted Mining &amp; Consulting</div>
+            <div class="p-line accent" style="width:70%"></div>
+            <div class="p-line" style="width:55%"></div>
+            <div class="p-btn">Request a Consultation</div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <h3>Hive Mine</h3>
+          <div class="portfolio-type">Mining &amp; Consulting</div>
+          <p>Authority-driven site built for trust in a skeptical market. Structured narrative, transparent process section, and clear consultation pathway.</p>
+          <a href="https://thehivemine.com/" target="_blank" rel="noopener" class="portfolio-link">Visit site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Who We Serve ═══ -->
+<section class="section serve">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Who We Serve</div>
+      <h2 class="section-title">Built for businesses where the phone is the pipeline.</h2>
+      <p class="section-subtitle">We work with local service businesses that understand a single phone call can be worth hundreds — or thousands — of dollars.</p>
+    </div>
+    <div class="serve-grid">
+      <div class="serve-item reveal reveal-d1"><h4>HVAC</h4><p>Heating &amp; cooling</p></div>
+      <div class="serve-item reveal reveal-d1"><h4>Roofing</h4><p>Residential &amp; commercial</p></div>
+      <div class="serve-item reveal reveal-d2"><h4>Plumbing</h4><p>Service &amp; repair</p></div>
+      <div class="serve-item reveal reveal-d2"><h4>Electrical</h4><p>Wiring &amp; installation</p></div>
+      <div class="serve-item reveal reveal-d3"><h4>Contractors</h4><p>General &amp; specialty</p></div>
+      <div class="serve-item reveal reveal-d3"><h4>Auto Services</h4><p>Repair &amp; maintenance</p></div>
+      <div class="serve-item reveal reveal-d4"><h4>Landscaping</h4><p>Design &amp; maintenance</p></div>
+      <div class="serve-item reveal reveal-d4"><h4>Fitness Studios</h4><p>Gyms &amp; training</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Pricing ═══ -->
+<section class="section pricing" id="pricing">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Pricing</div>
+      <h2 class="section-title">Simple, straightforward pricing.</h2>
+      <p class="section-subtitle">No hidden fees. No surprise invoices. Pick the plan that fits your business.</p>
+    </div>
+    <div class="pricing-grid reveal reveal-d1">
+      <div class="pricing-card">
+        <div class="plan-name">One-Time Build</div>
+        <div class="plan-price">$1,400</div>
+        <div class="plan-setup">One-time payment</div>
+        <div class="plan-desc">A conversion-structured website, delivered and done. Best for businesses that want to manage things themselves.</div>
+        <ul class="pricing-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Conversion-optimized website</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Mobile-first, fast-loading design</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Click-to-call integration</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>One round of revisions</li>
+          <li class="excluded"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>No ongoing support</li>
+          <li class="excluded"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>No Google Business Profile work</li>
+        </ul>
+        <a href="#audit" class="pricing-cta">Get Started</a>
+      </div>
+
+      <div class="pricing-card featured">
+        <div class="plan-name">Monthly Partner</div>
+        <div class="plan-price">$139<span>/month</span></div>
+        <div class="plan-setup">+ $350 one-time setup fee</div>
+        <div class="plan-desc">Website build plus ongoing optimization. Your web presence, handled — so you can focus on running your business.</div>
+        <ul class="pricing-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Everything in One-Time Build</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Google Business Profile optimization</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Monthly performance report</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Monthly strategy call</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Up to 3 content edits per month</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Call-click tracking &amp; analytics</li>
+        </ul>
+        <a href="#audit" class="pricing-cta">Get Started</a>
+      </div>
+    </div>
+    <div class="pricing-extra reveal reveal-d2">
+      <h4>Need additional edits?</h4>
+      <p>Monthly Partner clients receive 3 content updates per month. Additional edits are available at $50 each — no contracts, no commitments. Just tell us what you need.</p>
+    </div>
+    <p class="pricing-note reveal reveal-d3">No long-term contracts. Cancel the monthly plan anytime. The website stays live.</p>
+  </div>
+</section>
+
+<!-- ═══ Process ═══ -->
+<section class="section" id="process">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;max-width:560px;margin:0 auto">
+      <div class="section-label" style="text-align:center">The Process</div>
+      <h2 class="section-title" style="text-align:center;margin:0 auto">Three steps. No surprises.</h2>
+      <p class="section-subtitle" style="text-align:center;margin:0.75rem auto 0">A structured process that respects your time and delivers predictable results.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal reveal-d1">
+        <div class="step-num">1</div>
+        <h3>Strategy Call</h3>
+        <p>We learn your business, your market, and what a successful website means for you. No pressure. Just clarity.</p>
+      </div>
+      <div class="process-step reveal reveal-d2">
+        <div class="step-num">2</div>
+        <h3>Build &amp; Review</h3>
+        <p>We build your site using a conversion-tested structure. You review a draft, we refine. One round, done right.</p>
+      </div>
+      <div class="process-step reveal reveal-d3">
+        <div class="step-num">3</div>
+        <h3>Launch</h3>
+        <p>Your site goes live — fast, mobile-optimized, and structured to start generating calls from day one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Differentiator ═══ -->
+<section class="section diff" id="why">
+  <div class="section-inner">
+    <div class="diff-layout">
+      <div class="diff-left reveal">
+        <div class="section-label">Why Ring Digital</div>
+        <blockquote>"We don't do everything. We do this well."</blockquote>
+        <p>Most agencies sell complexity — full-service stacks, SEO promises, social media management. We believe local service businesses don't need more complexity. They need a website that works. One that looks professional, loads fast, and guides every visitor toward one clear action: calling you.</p>
+      </div>
+      <div class="diff-right">
+        <div class="diff-item reveal reveal-d1">
+          <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><h4>Conversion-structured</h4><p>Every page built around driving phone calls, not winning design awards.</p></div>
+        </div>
+        <div class="diff-item reveal reveal-d2">
+          <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><h4>Clean and professional</h4><p>Modern design that positions you as the most credible option in your market.</p></div>
+        </div>
+        <div class="diff-item reveal reveal-d3">
+          <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><h4>Fair, transparent pricing</h4><p>You know exactly what you're paying for. No upsells. No surprises. No hidden fees.</p></div>
+        </div>
+        <div class="diff-item reveal reveal-d4">
+          <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><h4>Predictable delivery</h4><p>Structured process. Clear timeline. No scope creep. No creative chaos.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta-section" id="audit">
+  <div class="cta-inner reveal">
+    <div class="section-label">Get Started</div>
+    <h2>Get a free audit of your current website.</h2>
+    <p>We'll review your site, identify what's costing you calls, and show you exactly how we'd fix it. No pitch. No pressure. Just a clear, honest assessment.</p>
+    <div class="cta-actions">
+      <a href="https://calendly.com" class="btn-primary" target="_blank" rel="noopener">
+        Book Your Free Audit
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="cta-contact">
+      <a href="tel:7134241892">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        (713) 424-1892
+      </a>
+      <a href="mailto:info@ringdigital.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        info@ringdigital.com
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Footer ═══ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>Ring Digital</h4>
+      <p>Conversion-structured websites for local service businesses. Serving Houston, TX and available nationwide.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:7134241892">(713) 424-1892</a>
+      <a href="mailto:info@ringdigital.com">info@ringdigital.com</a>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="#work">Our Work</a>
+      <a href="#approach">Approach</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#process">Process</a>
+      <a href="#why">Why Us</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Ring Digital. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+// Nav scroll effect
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40)});
+
+// Reveal on scroll
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}
+  });
+});
+</script>
+</body>
+</html>
